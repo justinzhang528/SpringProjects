@@ -25,11 +25,8 @@ public class TestUser {
 
         UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
 
-        User newUser = new User(7,"tom",26,"Phd");
-        userMapper.addUser(newUser);
-
-        List<User> users = userMapper.getAllUser();
-        System.out.println(users);
+        User user = userMapper.getUserByName("merry");
+        System.out.println(user);
 
         sqlSession.close();
     }
